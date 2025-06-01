@@ -1,6 +1,6 @@
 ---
 layout: category
-title: Interesting Facts
+title: hobby 1
 category: facts
 permalink: /facts
 ---
