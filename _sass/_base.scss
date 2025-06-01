@@ -40,6 +40,9 @@ h4, h5, h6 {
 /* Body */
 body {
   font-family: $base-font-family;
+  background-color: $background-color;
+  color: $text-color;
+
 }
 body img {
   align: middle;
