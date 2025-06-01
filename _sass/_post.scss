@@ -18,7 +18,6 @@
   max-width: 800px;
 }
 
-/* Media Queries */
 @media (max-width: $container-width) {
   .post-content {
     width: 80vw;
@@ -56,7 +55,7 @@
 }
 
 /*
-  Related Posts - AGGIORNATO per essere coerente con 800px
+  Related Posts
 */
 
 .related {
@@ -75,7 +74,7 @@
 
 .related-thumbnail {
   position: relative;
-  width: 800px;  /* Assicurati che sia 800px */
+  width: 800px;
   height: 200px;
   overflow: hidden;
 }
@@ -85,7 +84,7 @@
   left: 50%;
   top: 50%;
   height: auto;
-  width: 800px;  /* Assicurati che sia 800px */
+  width: 800px;
   -webkit-transform: translate(-50%,-50%);
       -ms-transform: translate(-50%,-50%);
           transform: translate(-50%,-50%);
@@ -97,21 +96,46 @@
   font-family: $base-font-family;
 }
 
-/* Media Queries per Related Posts - AGGIORNATE */
 @media (max-width: $container-width) {
   .related-thumbnail {
-    width: 80vw;  /* Coerente con post-content */
+    width: 80vw;
   }
   .related img {
-    width: 80vw;  /* AGGIUNTO: anche l'immagine deve scalare */
+    width: 80vw;
   }
 }
 
 @media (max-width: $tablet-width) {
   .related-thumbnail {
-    width: 95vw;  /* Coerente con post-content */
+    width: 95vw;
   }
   .related img {
-    width: 95vw;  /* AGGIUNTO: anche l'immagine deve scalare */
+    width: 95vw;
+  }
+}
+
+/* 
+  Override per risolvere il conflitto con body img in _base.scss 
+  Questa sezione forza le dimensioni corrette per tutte le immagini
+*/
+.post-content img,
+.featured-image img,
+.related img {
+  max-width: 800px !important;
+}
+
+@media (max-width: $container-width) {
+  .post-content img,
+  .featured-image img,
+  .related img {
+    max-width: 80vw !important;
+  }
+}
+
+@media (max-width: $tablet-width) {
+  .post-content img,
+  .featured-image img,
+  .related img {
+    max-width: 95vw !important;
   }
 }
